@@ -6,5 +6,6 @@ namespace WLDataLayer.Identity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public DateTime RegisterDate { get; set; }
     }
 }

@@ -5,9 +5,9 @@ using WLDataLayer.DAL.Interfaces;
 
 namespace WLDataLayer.DAL.Repositories
 {
-    public class RefreshTokenRepository : BaseRepository<RefreshToken>, IRefreshTokenRepository
+    public class UserAchievementRepository : BaseRepository<UserAchievement>, IUserAchievementRepository
     {
-        public RefreshTokenRepository(NpgsqlTransaction transaction,WLDBContext dbContext) : base(dbContext)
+        public UserAchievementRepository(NpgsqlTransaction transaction, WLDBContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }

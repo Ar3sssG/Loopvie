@@ -2,6 +2,7 @@
 using Npgsql;
 using WLDataLayer.DAL.DBContext;
 using WLDataLayer.DAL.Interfaces;
+using WLDataLayer.DAL.Repositories;
 
 namespace WLDataLayer.DAL
 {
@@ -18,7 +19,16 @@ namespace WLDataLayer.DAL
         #region Repositories
 
         private IRefreshTokenRepository _refreshTokenRepository;
-        public IRefreshTokenRepository RefreshTokenRepository => _refreshTokenRepository != null ? _refreshTokenRepository : new RefreshTokenRepository(_transaction,_dbContext);
+        public IRefreshTokenRepository RefreshTokenRepository => _refreshTokenRepository != null ? _refreshTokenRepository : new RefreshTokenRepository(_transaction, _dbContext);
+
+        private ICategoryRepository _categoryRepository;
+        public ICategoryRepository CategoryRepository => _categoryRepository != null ? _categoryRepository : new CategoryRepository(_transaction, _dbContext);
+
+        private IWordRepository _wordRepository;
+        public IWordRepository WordRepository => _wordRepository != null ? _wordRepository : new WordRepository(_transaction, _dbContext);
+
+        private IUserStatisticRepository _userStatisticRepository;
+        public IUserStatisticRepository UserStatisticRepository => _userStatisticRepository != null ? _userStatisticRepository : new UserStatisticRepository(_transaction, _dbContext);
 
         #endregion
 

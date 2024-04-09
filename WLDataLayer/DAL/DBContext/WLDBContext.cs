@@ -16,6 +16,7 @@ namespace WLDataLayer.DAL.DBContext
         #region DbSets
 
         public virtual DbSet<RefreshToken> RefreshTokens { get; set; }
+        public virtual DbSet<UserStatistic> UserStatistics { get; set; }
 
         #endregion
 
@@ -65,10 +66,11 @@ namespace WLDataLayer.DAL.DBContext
             modelBuilder.Entity<IdentityUserToken<int>>()
                 .ToTable("UsersTokens");
 
-            modelBuilder.Entity<Role>().HasData(
-            new Role { Id = 1 ,Name = "Admin", NormalizedName = "ADMIN" },
-            new Role { Id = 2 ,Name = "User", NormalizedName = "USER" });
+            modelBuilder.Entity<Role>().HasData(new Role { Id = 1, Name = "User", NormalizedName = "USER" });
 
+            //modelBuilder.Entity<Role>().HasData(
+            //new Role { Id = 1, Name = "Admin", NormalizedName = "ADMIN" },
+            //new Role { Id = 2, Name = "User", NormalizedName = "USER" });
         }
     }
 }

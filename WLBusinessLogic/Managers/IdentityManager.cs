@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using WLBusinessLogic.Interfaces;
-using WLBusinessLogic.Managers;
 using WLCommon.Constants;
 using WLCommon.Models.Manager;
 using WLDataLayer.DAL.Entities;

@@ -5,9 +5,9 @@ using WLDataLayer.DAL.Interfaces;
 
 namespace WLDataLayer.DAL.Repositories
 {
-    public class RefreshTokenRepository : BaseRepository<RefreshToken>, IRefreshTokenRepository
+    public class WordRepository : BaseRepository<Word>, IWordRepository
     {
-        public RefreshTokenRepository(NpgsqlTransaction transaction,WLDBContext dbContext) : base(dbContext)
+        public WordRepository(NpgsqlTransaction transaction, WLDBContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }
