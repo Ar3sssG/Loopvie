@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace WLCommon.Models.Request
 {
@@ -8,6 +9,9 @@ namespace WLCommon.Models.Request
         public string Username { get; set; }
         [Required]
         public string Password { get; set; }
+
+        [JsonIgnore]
+        public int UserId { get; set; }
     }
 
     public class RegisterRequestModel
