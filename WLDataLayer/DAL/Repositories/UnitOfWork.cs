@@ -59,6 +59,7 @@ namespace WLDataLayer.DAL
         {
             if (_transaction == null)
             {
+                throw new NullReferenceException("There is no created transaction");
             }
 
             await _transaction.CommitAsync();
