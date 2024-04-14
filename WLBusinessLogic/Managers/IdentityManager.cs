@@ -228,7 +228,7 @@ namespace WLBusinessLogic.Managers
                 UserId = model.UserId,
                 Token = model.Token,
                 ExpireDate = model.ExpireDate,
-                CreationDate = DateTime.UtcNow,
+                CreatedDate = DateTime.UtcNow,
             };
 
             await _unitOfWork.RefreshTokenRepository.AddAsync(refreshToken);

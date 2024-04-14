@@ -29,9 +29,6 @@ namespace WLAPI.Controllers
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status401Unauthorized)]
         public async Task<IActionResult> Authenticate(AuthRequestModel requestModel)
         {
-            User user = await _userManager.GetUserAsync(User);
-            requestModel.UserId = user.Id;
-
             AuthResponseModel response = await _identityManager.AuthenticateUserAsync(requestModel); 
             return Ok(response);
         }

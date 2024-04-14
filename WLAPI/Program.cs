@@ -26,6 +26,8 @@ namespace WLAPI
 
             builder.Services.ConfigureAutoMapper();
 
+            builder.Services.AddHttpContextAccessor();
+
             var app = builder.Build();
 
             app.UseCors();
