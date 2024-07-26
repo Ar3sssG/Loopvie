@@ -13,5 +13,23 @@ namespace WLAPI.Controllers
         {
             _wordManager = wordManager;
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetWord() 
+        {
+            return Ok(await Task.FromResult(0));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SubmitAnswer()
+        {
+            return Ok(await Task.FromResult(0));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetBlitzWord()
+        {
+            return Ok(await Task.FromResult(0));
+        }
     }
 }

@@ -21,24 +21,24 @@ namespace WLBusinessLogic.Managers
     {
         private UserManager<User> _userManager;
         private SignInManager<User> _signInManager;
-        public IdentityManager(IUnitOfWork unitOfWork,IMapper mapper,UserManager<User> userManager,SignInManager<User> signInManager) : base(unitOfWork,mapper)
+        public IdentityManager(IUnitOfWork unitOfWork, IMapper mapper, UserManager<User> userManager, SignInManager<User> signInManager) : base(unitOfWork, mapper)
         {
             _userManager = userManager;
             _signInManager = signInManager;
         }
-        
+
         public async Task<User> GetUserByRefreshTokenAsync(string refreshToken)
         {
             var token = await _unitOfWork.RefreshTokenRepository.Get(x => x.Token == refreshToken).Include(x => x.User).FirstOrDefaultAsync();
 
             if (token == null)
             {
-                throw new Exception(AuthErrorConstants.InvalidRefreshToken);
+                ExceptionHelper.ThrowUnauthorized(AuthErrorConstants.InvalidRefreshToken);
             }
 
             if (token.ExpireDate < DateTime.UtcNow)
             {
-                throw new Exception(AuthErrorConstants.ExpiredRefreshToken);
+                ExceptionHelper.ThrowUnauthorized(AuthErrorConstants.ExpiredRefreshToken);
             }
 
             User user = token.User;
@@ -121,7 +121,7 @@ namespace WLBusinessLogic.Managers
                 }
 
                 await _unitOfWork.CommitTrasnactionAsync();
-                
+
             }
             catch (Exception ex)
             {
@@ -152,22 +152,19 @@ namespace WLBusinessLogic.Managers
 
                 if (isRefreshTokenRequest)
                 {
-                    await _signInManager.SignInAsync(user, true);
+                    await _signInManager.SignInAsync(user, false);
                 }
                 else
                 {
                     signInResult = await _signInManager.PasswordSignInAsync(user, password, false, false);
+                    if (!signInResult.Succeeded)
+                    {
+                        responseModel.IsAuthorized = false;
+                        return responseModel;
+                    }
                 }
 
-                if (!signInResult.Succeeded)
-                {
-                    responseModel.IsAuthorized = false;
-                    return responseModel;
-                }
-                else
-                {
-                    responseModel.IsAuthorized = true;
-                }
+                responseModel.IsAuthorized = true;
 
                 JwtSecurityToken jwt = new JwtSecurityToken(
                         issuer: AuthConstants.ISSUER,

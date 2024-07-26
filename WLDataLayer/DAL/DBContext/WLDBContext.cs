@@ -27,6 +27,9 @@ namespace WLDataLayer.DAL.DBContext
         public virtual DbSet<UserAchievement> UserAchievements { get; set; }
         #endregion
 
+
+        #region SaveChangesAsync
+
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             try
@@ -63,6 +66,8 @@ namespace WLDataLayer.DAL.DBContext
             }
         }
 
+        #endregion
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -87,8 +92,6 @@ namespace WLDataLayer.DAL.DBContext
 
             modelBuilder.Entity<IdentityUserToken<int>>()
                 .ToTable("UsersTokens");
-
-            //modelBuilder.Entity<Role>().HasData(new Role { Id = 1, Name = "User", NormalizedName = "USER" });
 
             modelBuilder.Entity<Role>().HasData(
             new Role { Id = 1, Name = "Admin", NormalizedName = "ADMIN" },
