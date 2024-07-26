@@ -12,6 +12,8 @@ namespace WLAPI
 
             builder.Services.ConfigureAspNetServices(builder.Configuration);
 
+            builder.Services.ConfigureMongoDbServices(builder.Configuration);
+
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             builder.Services.AddManagerServices();
