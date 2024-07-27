@@ -1,5 +1,4 @@
-﻿
-using WLDataLayer.Identity;
+﻿using WLDataLayer.Identity;
 
 namespace WLDataLayer.DAL.Entities
 {
