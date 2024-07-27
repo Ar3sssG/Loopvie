@@ -15,7 +15,7 @@ namespace WLAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetWord() 
+        public async Task<IActionResult> GetWord()
         {
             return Ok(await Task.FromResult(0));
         }
