@@ -24,8 +24,8 @@ namespace WLDataLayer.DAL
         private ICategoryRepository _categoryRepository;
         public ICategoryRepository CategoryRepository => _categoryRepository != null ? _categoryRepository : new CategoryRepository(_transaction, _dbContext);
 
-        private IWordRepository _wordRepository;
-        public IWordRepository WordRepository => _wordRepository != null ? _wordRepository : new WordRepository(_transaction, _dbContext);
+        //private IWordRepository _wordRepository;
+        //public IWordRepository WordRepository => _wordRepository != null ? _wordRepository : new WordRepository(_transaction, _dbContext);
 
         private IUserStatisticRepository _userStatisticRepository;
         public IUserStatisticRepository UserStatisticRepository => _userStatisticRepository != null ? _userStatisticRepository : new UserStatisticRepository(_transaction, _dbContext);

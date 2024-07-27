@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using WLDataLayer.DAL.StoreEntities;
 using WLDataLayer.DAL.StoreServices.Interfaces;
 using WLDataLayer.DAL.StoreServices.StoresSettings;
 
@@ -7,11 +8,7 @@ namespace WLDataLayer.DAL.StoreServices
 {
     public class AnswerStoreService : IAnswerStoreService
     {
-        //**********************TODO**************************\\
-        //**********************TODO**************************\\
-        //**********************TODO**************************\\
-        //**********************TODO**************************\\
-        private readonly IMongoCollection<dynamic> _answerCollection; 
+        private readonly IMongoCollection<Answer> _answerCollection;
 
         public AnswerStoreService(IOptions<AnswerStoreServiceSettings> options)
         {
@@ -19,17 +16,32 @@ namespace WLDataLayer.DAL.StoreServices
 
             var database = client.GetDatabase(options.Value.StoreName);
 
-            _answerCollection = database.GetCollection<dynamic>(options.Value.CollectionName);
+            _answerCollection = database.GetCollection<Answer>(options.Value.CollectionName);
         }
 
-        public async Task<dynamic> GetAsync()
+        public async Task<List<Answer>> GetAsync()
         {
             return await _answerCollection.Find(_ => true).ToListAsync();
         }
 
-        public async Task<dynamic> GetAsync()
+        public async Task<Answer> GetAsync(string id)
         {
-            return await _answerCollection.Find(_ => true).ToListAsync();
+            return await _answerCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+        }
+
+        public async Task CreateAsync(Answer answer)
+        {
+            await _answerCollection.InsertOneAsync(answer);
+        }
+
+        public async Task UpdateAsync(string id, Answer answer)
+        {
+            await _answerCollection.ReplaceOneAsync(x => x.Id == id, answer);
+        }
+
+        public async Task RemoveAsync(string id)
+        {
+            await _answerCollection.DeleteOneAsync(x => x.Id == id);
         }
     }
 }

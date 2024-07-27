@@ -8,6 +8,6 @@ namespace WLDataLayer.DAL.Entities
         public CategoryLevel CategoryLevel { get; set; }
         public bool IsEnabled { get; set; }
 
-        public virtual ICollection<Word> Words { get; set; }
+        //public virtual ICollection<Word> Words { get; set; }
     }
 }

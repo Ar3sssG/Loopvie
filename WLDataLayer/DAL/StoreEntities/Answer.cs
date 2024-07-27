@@ -1,7 +1,7 @@
 ﻿
 namespace WLDataLayer.DAL.StoreEntities
 {
-    public class Word
+    public class Answer
     {
         public string Id { get; set; }
     }
