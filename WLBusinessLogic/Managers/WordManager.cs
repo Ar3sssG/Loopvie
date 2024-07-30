@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using WLBusinessLogic.Interfaces;
+using WLCommon.Models.Response.Word;
 using WLDataLayer.DAL.Interfaces;
 using WLDataLayer.DAL.StoreEntities;
 using WLDataLayer.DAL.StoreServices;
@@ -22,17 +23,19 @@ namespace WLBusinessLogic.Managers
             _answerStoreService = answerStoreService;
         }
 
-        public async Task<Word> GetWordAsync(int userId)
+        public async Task<WordResponseModel> GetWordAsync(int userId)
         {
             //Get the user's last 15 answers excluding the most recent one
-            List<Answer> userAnswers = await _answerStoreService.GetAsync();
-            var a = await _wordStoreService.Get(x => x.Id == "5").ToList();
+            List<Answer> userAnswers = await _answerStoreService.GetAsync(x => x.UserId == userId);
+            //var a = await _wordStoreService.Get(x => x.Id == "5").ToList();
 
-            //todo need cruds like entity
-            if (userAnswers.Any() && _answerStoreService.Count())
-            {
+            ////todo need cruds like entity
+            //if (userAnswers.Any() && _answerStoreService.Count())
+            //{
 
-            }
+            //}
+
+            return new WordResponseModel();
         }
     }
 }

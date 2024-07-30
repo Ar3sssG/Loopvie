@@ -1,16 +1,17 @@
 ﻿
+using MongoDB.Driver;
 using System.Linq.Expressions;
 
 namespace WLDataLayer.DAL.StoreServices.Interfaces
 {
     public interface IBaseStoreService<T>
     {
-        public Task<List<T>> GetAsync();
-        public Task<T> GetAsync(string id);
-        public Task CreateAsync(T newItem);
-        public Task UpdateAsync(string id, T updatedItem);
-        public Task RemoveAsync(string id);
-        public IQueryable<T> Get(Expression<Func<T, bool>> predicate);
-       
+        Task<T> AddAsync(T entity);
+        Task AddRangeAsync(List<T> entities);
+        Task<List<T>> GetAsync(Expression<Func<T, bool>> predicate);
+        T Update(Expression<Func<T, bool>> filter, T entity);
+        Task DeleteAsync(Expression<Func<T, bool>> predicate);
+
+
     }
 }

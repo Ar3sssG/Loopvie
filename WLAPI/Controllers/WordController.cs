@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WLBusinessLogic.Interfaces;
+using WLCommon.Models.Response.Word;
 using WLDataLayer.Identity;
 
 namespace WLAPI.Controllers
@@ -12,13 +13,15 @@ namespace WLAPI.Controllers
             : base(userManager, signInManager, logger)
         {
             _wordManager = wordManager;
+            _userManager = userManager;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetWord()
         {
-            await _wordManager.
-            return Ok(await Task.FromResult(0));
+            User user = await _userManager.GetUserAsync(User);
+            WordResponseModel word= await _wordManager.GetWordAsync(user.Id);
+            return Ok();
         }
 
         [HttpPost]
