@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using WLBusinessLogic.Interfaces;
 using WLDataLayer.DAL.Interfaces;
+using WLDataLayer.DAL.StoreEntities;
 using WLDataLayer.DAL.StoreServices;
 using WLDataLayer.Identity;
 
@@ -21,6 +22,16 @@ namespace WLBusinessLogic.Managers
             _answerStoreService = answerStoreService;
         }
 
+        public async Task<Word> GetWordAsync(int userId)
+        {
+            //Get the user's last 15 answers excluding the most recent one
+            List<Answer> userAnswers = await _answerStoreService.GetAsync();
 
+            //todo need cruds like entity
+            if (userAnswers.Any() && _answerStoreService.Count())
+            {
+
+            }
+        }
     }
 }

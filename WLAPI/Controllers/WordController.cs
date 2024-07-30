@@ -17,6 +17,7 @@ namespace WLAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetWord()
         {
+            await _wordManager.
             return Ok(await Task.FromResult(0));
         }
 
