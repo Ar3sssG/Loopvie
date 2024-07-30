@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using System.Linq.Expressions;
+using WLDataLayer.DAL.DBContext;
 using WLDataLayer.DAL.StoreEntities;
 using WLDataLayer.DAL.StoreServices.Interfaces;
 using WLDataLayer.DAL.StoreServices.StoresSettings;
@@ -42,6 +44,22 @@ namespace WLDataLayer.DAL.StoreServices
         public async Task RemoveAsync(string id)
         {
             await _wordCollection.DeleteOneAsync(x => x.Id == id);
+        }
+        /// <summary>
+        /// //////////////////////TODOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public async IQueryable<Word> Get(Expression<Func<Word, bool>> predicate)
+        {
+            IQueryable<Word> set = await _wordCollection.AsQueryable();
+
+            if (predicate == null)
+            {
+                return set;
+            }
+
+            return set.Where(predicate);
         }
     }
 }

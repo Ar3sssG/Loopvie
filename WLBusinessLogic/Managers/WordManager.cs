@@ -26,6 +26,7 @@ namespace WLBusinessLogic.Managers
         {
             //Get the user's last 15 answers excluding the most recent one
             List<Answer> userAnswers = await _answerStoreService.GetAsync();
+            var a = await _wordStoreService.Get(x => x.Id == "5").ToList();
 
             //todo need cruds like entity
             if (userAnswers.Any() && _answerStoreService.Count())
