@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
-using System.Net.Http.Headers;
 using WLBusinessLogic.Interfaces;
 using WLCommon.Helpers;
-using WLCommon.Models.Response.Word;
+using WLCommon.Models.Response;
 using WLDataLayer.DAL.Interfaces;
 using WLDataLayer.DAL.StoreEntities;
 using WLDataLayer.DAL.StoreServices;
@@ -120,6 +119,36 @@ namespace WLBusinessLogic.Managers
 
             List<string> answerVariants = WordHelper.GetWordAnswersVariants(selectedWord.CorrectAnswer, selectedWord.WrongVariants);
             WordHelper.RandomizeList(answerVariants);
+            response = new WordResponseModel
+            {
+                Id = selectedWord.Id,
+                Text = selectedWord.Text,
+                Variants = answerVariants
+            };
+
+            return response;
+        }
+
+        public async Task<WordResponseModel> GetBlitzWordAsync(int difficulty,bool isRandomDifficulty = false)
+        {
+            Random random = new Random();
+            List<Word> words = await _wordStoreService.GetAsync();
+            Word selectedWord;
+            WordResponseModel response;
+
+            if (isRandomDifficulty)
+            {
+                selectedWord = words[random.Next(0,words.Count)];
+            }
+            else
+            {
+                List<Word> wordDiffList = words.Where(x => x.Difficulty == difficulty).ToList();
+                selectedWord = wordDiffList[random.Next(0,wordDiffList.Count)];
+            }
+
+            List<string> answerVariants = WordHelper.GetWordAnswersVariants(selectedWord.CorrectAnswer, selectedWord.WrongVariants);
+            WordHelper.RandomizeList(answerVariants);
+
             response = new WordResponseModel
             {
                 Id = selectedWord.Id,

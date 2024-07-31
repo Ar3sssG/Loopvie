@@ -1,5 +1,5 @@
 ﻿
-namespace WLCommon.Models.Response.Word
+namespace WLCommon.Models.Response
 {
     public class WordResponseModel
     {

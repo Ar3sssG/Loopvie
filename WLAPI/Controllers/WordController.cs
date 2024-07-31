@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WLBusinessLogic.Interfaces;
-using WLCommon.Models.Response.Word;
+using WLCommon.Models.Error;
+using WLCommon.Models.Response;
 using WLDataLayer.Identity;
 
 namespace WLAPI.Controllers
@@ -16,24 +17,45 @@ namespace WLAPI.Controllers
             _userManager = userManager;
         }
 
+        /// <summary>
+        /// Get Word
+        /// </summary>
+        /// <param name="difficulty"></param>
+        /// <returns>Word suggested by algorythm</returns>
         [HttpGet]
+        [ProducesResponseType(typeof(WordResponseModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetWord(int difficulty)
         {
             User user = await _userManager.GetUserAsync(User);
-            WordResponseModel word = await _wordManager.GetWordAsync(user.Id, difficulty);
-            return Ok();
+            WordResponseModel response = await _wordManager.GetWordAsync(user.Id, difficulty);
+            return Ok(response);
         }
 
+        /// <summary>
+        /// Gets Blitz Word
+        /// </summary>
+        /// <returns>Random word</returns>
+        [HttpGet]
+        [ProducesResponseType(typeof(WordResponseModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetBlitzWord(int difficulty)
+        {
+            WordResponseModel response = await _wordManager.GetBlitzWordAsync(difficulty);
+            return Ok(response);
+        }
+
+        /// <summary>
+        /// Submit Answer
+        /// </summary>
+        /// <returns>Ok</returns>
         [HttpPost]
         public async Task<IActionResult> SubmitAnswer()
         {
+
             return Ok(await Task.FromResult(0));
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetBlitzWord()
-        {
-            return Ok(await Task.FromResult(0));
-        }
+        
     }
 }
