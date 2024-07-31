@@ -8,7 +8,7 @@ namespace WLDataLayer.DAL.StoreServices
 {
     public class BaseStoreService<T, TSettings> : IBaseStoreService<T> where T : class  where TSettings : class, IStoreServiceSettings
     {
-        private readonly IMongoCollection<T> _mongoCollection;
+        public readonly IMongoCollection<T> _mongoCollection;
 
         public BaseStoreService(IOptions<TSettings> options)
         {
@@ -41,12 +41,19 @@ namespace WLDataLayer.DAL.StoreServices
             return entity;
         }
 
-        public async Task<List<T>> GetAsync(Expression<Func<T, bool>> predicate)
+        public async Task<List<T>> GetAsync(Expression<Func<T, bool>> predicate = null)
         {
             var filter = Builders<T>.Filter.Where(predicate);
             var cursor = await _mongoCollection.FindAsync(filter);
             return await cursor.ToListAsync();
         }
+
+        //public async Task<IQueryable<T>> GetAsync(Expression<Func<T, bool>> predicate)
+        //{
+        //    var filter = Builders<T>.Filter.Where(predicate);
+        //    var queryable = _mongoCollection.AsQueryable().Where(predicate);
+        //    return queryable;
+        //}
 
         #endregion
     }

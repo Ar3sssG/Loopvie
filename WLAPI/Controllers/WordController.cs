@@ -9,7 +9,7 @@ namespace WLAPI.Controllers
     public class WordController : BaseController
     {
         private IWordManager _wordManager;
-        public WordController(UserManager<User> userManager, SignInManager<User> signInManager, ILogger<IdentityController> logger,IWordManager wordManager)
+        public WordController(UserManager<User> userManager, SignInManager<User> signInManager, ILogger<IdentityController> logger, IWordManager wordManager)
             : base(userManager, signInManager, logger)
         {
             _wordManager = wordManager;
@@ -17,10 +17,10 @@ namespace WLAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetWord()
+        public async Task<IActionResult> GetWord(int difficulty)
         {
             User user = await _userManager.GetUserAsync(User);
-            WordResponseModel word= await _wordManager.GetWordAsync(user.Id);
+            WordResponseModel word = await _wordManager.GetWordAsync(user.Id, difficulty);
             return Ok();
         }
 

@@ -10,5 +10,6 @@ namespace WLDataLayer.DAL.StoreServices
         public WordStoreService(IOptions<WordStoreServiceSettings> options) : base(options)
         {
         }
+        
     }
 }

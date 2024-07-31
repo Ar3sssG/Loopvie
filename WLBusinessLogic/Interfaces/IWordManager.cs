@@ -4,6 +4,6 @@ namespace WLBusinessLogic.Interfaces
 {
     public interface IWordManager
     {
-        Task<WordResponseModel> GetWordAsync(int userId);
+        Task<WordResponseModel> GetWordAsync(int userId, int difficulty);
     }
 }
