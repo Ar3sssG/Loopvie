@@ -20,10 +20,7 @@ namespace WLDataLayer.DAL.DBContext
         #region DbSets
 
         public virtual DbSet<RefreshToken> RefreshTokens { get; set; }
-        public virtual DbSet<UserStatistic> UserStatistics { get; set; }
         public virtual DbSet<Achievement> Achievements { get; set; }
-        public virtual DbSet<Category> Categories { get; set; }
-        //public virtual DbSet<Word> Words { get; set; }
         public virtual DbSet<UserAchievement> UserAchievements { get; set; }
         #endregion
 
