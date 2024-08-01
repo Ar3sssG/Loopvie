@@ -13,7 +13,7 @@ namespace WLAPI.Middlewares
         }
         public async Task InvokeAsync(HttpContext context)
         {
-            if (context.Request.Path.StartsWithSegments("/swagger"))
+            if (context.Request.Path.StartsWithSegments("/swagger") || context.Request.Path.StartsWithSegments("/swagger/index.html"))
             {
                 string authHeader = context.Request.Headers["Authorization"];
                 if (authHeader != null && authHeader.StartsWith("Basic "))
