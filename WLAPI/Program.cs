@@ -21,7 +21,7 @@ namespace WLAPI
             builder.Services.ConfigureAuthentication();
 
             builder.Services.AddControllers();
-            
+
             builder.Services.AddEndpointsApiExplorer();
 
             builder.Services.AddSwagger();
@@ -34,15 +34,11 @@ namespace WLAPI
 
             app.UseCors();
 
+            app.UseSwaggerAuthorization();
 
             app.UseSwagger();
+
             app.UseSwaggerUI();
-            //
-            //if (app.Environment.IsDevelopment())
-            //{
-            //    app.UseSwagger();
-            //    app.UseSwaggerUI();
-            //}
 
             app.UseHttpsRedirection();
 
