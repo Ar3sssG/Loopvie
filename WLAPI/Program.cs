@@ -37,6 +37,7 @@ namespace WLAPI
 
             app.UseSwagger();
             app.UseSwaggerUI();
+            //
             //if (app.Environment.IsDevelopment())
             //{
             //    app.UseSwagger();
