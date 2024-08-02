@@ -16,7 +16,7 @@
             }
         }
 
-        public static List<string> GetWordAnswersVariants<T,TVariants>(T word,TVariants variants) where TVariants : List<string>
+        public static List<string> GetWordAnswersVariants<T,TVariants>(T word,TVariants variants) where T : IEnumerable<char> where TVariants : List<string>
         {
             return new List<string>(variants) { word.ToString() };
         }
