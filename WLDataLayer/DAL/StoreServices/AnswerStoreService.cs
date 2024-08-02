@@ -18,6 +18,10 @@ namespace WLDataLayer.DAL.StoreServices
             var filter = Builders<Answer>.Filter.Where(x => x.UserId == userId);
             var answers = await _mongoCollection.DistinctAsync<Answer>("WordId", filter);
             var sortedAnswers = await answers.ToListAsync();
+            if (sortedAnswers.Count < 16)
+            {
+                return sortedAnswers;
+            }
             sortedAnswers.OrderByDescending(x => x.Id).Take(16).ToList();
             sortedAnswers.RemoveAt(0);
             return sortedAnswers;

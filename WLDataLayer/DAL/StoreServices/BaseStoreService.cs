@@ -43,7 +43,7 @@ namespace WLDataLayer.DAL.StoreServices
 
         public async Task<List<T>> GetAsync(Expression<Func<T, bool>> predicate = null)
         {
-            var filter = Builders<T>.Filter.Where(predicate);
+            var filter = predicate != null ? Builders<T>.Filter.Where(predicate) : Builders<T>.Filter.Empty;
             var cursor = await _mongoCollection.FindAsync(filter);
             return await cursor.ToListAsync();
         }

@@ -8,8 +8,8 @@ namespace WLAPI.Extensions
         public static void ConfigureMongoDbServices(this IServiceCollection services, IConfiguration configuration)
         {
             //settings
-            services.Configure<WordStoreServiceSettings>(configuration.GetSection("WordStoreServiceSettings"));
-            services.Configure<AnswerStoreServiceSettings>(configuration.GetSection("AnswerStoreServiceSettings"));
+            services.Configure<WordStoreServiceSettings>(configuration.GetSection("Stores:WordStoreServiceSettings"));
+            services.Configure<AnswerStoreServiceSettings>(configuration.GetSection("Stores:AnswerStoreServiceSettings"));
 
             services.AddSingleton<WordStoreService>();
             services.AddSingleton<AnswerStoreService>();
