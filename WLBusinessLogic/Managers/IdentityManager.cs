@@ -79,6 +79,7 @@ namespace WLBusinessLogic.Managers
                 Email = requestModel.Email,
                 NormalizedUserName = requestModel.Email.ToUpper(),
                 NormalizedEmail = requestModel.Email.ToUpper(),
+                RegisterDate = DateTime.UtcNow
             };
 
             var result = await _userManager.CreateAsync(user, requestModel.Password);
