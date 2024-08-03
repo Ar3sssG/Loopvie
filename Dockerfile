@@ -6,9 +6,17 @@ EXPOSE 80
 # Use the .NET SDK image to build the application
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY WLAPI/WLAPI.csproj ./WLAPI/
-RUN dotnet restore ./WLAPI/WLAPI.csproj
-COPY WLAPI/. ./WLAPI/
+
+# Copy all project files and restore dependencies
+COPY WLAPI/WLAPI.csproj WLAPI/
+COPY WLBusinessLogic/WLBusinessLogic.csproj WLBusinessLogic/
+COPY WLDataLayer/WLDataLayer.csproj WLDataLayer/
+RUN dotnet restore WLAPI/WLAPI.csproj
+
+# Copy the rest of the source code
+COPY . .
+
+# Build the application
 WORKDIR /src/WLAPI
 RUN dotnet build -c Release -o /app/build
 
