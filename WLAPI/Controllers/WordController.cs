@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WLBusinessLogic.Interfaces;
 using WLCommon.Models.Error;
+using WLCommon.Models.Request;
 using WLCommon.Models.Response;
 using WLDataLayer.Identity;
 
@@ -48,14 +49,16 @@ namespace WLAPI.Controllers
         /// <summary>
         /// Submit Answer
         /// </summary>
-        /// <returns>Ok</returns>
+        /// <returns>Answers response</returns>
         [HttpPost]
-        public async Task<IActionResult> SubmitAnswer()
+        [ProducesResponseType(typeof(AnswerResponseModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status409Conflict)]
+        public async Task<IActionResult> SubmitAnswer(AnswerRequestModel request)
         {
-
-            return Ok(await Task.FromResult(0));
+            User user = await _userManager.GetUserAsync(User);
+            AnswerResponseModel response = await _wordManager.SubmitAnswerAsync(request, user.Id);
+            return Ok(response);
         }
 
-        
     }
 }

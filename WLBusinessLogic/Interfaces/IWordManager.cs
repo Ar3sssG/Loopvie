@@ -1,4 +1,5 @@
-﻿using WLCommon.Models.Response;
+﻿using WLCommon.Models.Request;
+using WLCommon.Models.Response;
 
 namespace WLBusinessLogic.Interfaces
 {
@@ -6,5 +7,6 @@ namespace WLBusinessLogic.Interfaces
     {
         Task<WordResponseModel> GetWordAsync(int userId, int difficulty);
         Task<WordResponseModel> GetBlitzWordAsync(int difficulty, bool isRandomDifficulty = false);
+        Task<AnswerResponseModel> SubmitAnswerAsync(AnswerRequestModel request, int userId);
     }
 }

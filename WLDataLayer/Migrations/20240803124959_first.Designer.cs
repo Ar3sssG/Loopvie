@@ -12,8 +12,8 @@ using WLDataLayer.DAL.DBContext;
 namespace WLDataLayer.Migrations
 {
     [DbContext(typeof(WLDBContext))]
-    [Migration("20240726075615_roles")]
-    partial class roles
+    [Migration("20240803124959_first")]
+    partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -158,40 +158,6 @@ namespace WLDataLayer.Migrations
                     b.ToTable("Achievements");
                 });
 
-            modelBuilder.Entity("WLDataLayer.DAL.Entities.Category", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CategoryLevel")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("CreatedById")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<bool>("IsEnabled")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
-
-                    b.Property<int?>("UpdatedById")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Categories");
-                });
-
             modelBuilder.Entity("WLDataLayer.DAL.Entities.RefreshToken", b =>
                 {
                     b.Property<int>("Id")
@@ -264,84 +230,6 @@ namespace WLDataLayer.Migrations
                     b.ToTable("UserAchievements");
                 });
 
-            modelBuilder.Entity("WLDataLayer.DAL.Entities.UserStatistic", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("CreatedById")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("UpdatedById")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("WordCount")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserStatistics");
-                });
-
-            modelBuilder.Entity("WLDataLayer.DAL.Entities.Word", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("CreatedById")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("DifficultyLevel")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("MainWord")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Transcription")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Translation_RU")
-                        .HasColumnType("text");
-
-                    b.Property<int?>("UpdatedById")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("Words");
-                });
-
             modelBuilder.Entity("WLDataLayer.Identity.Role", b =>
                 {
                     b.Property<int>("Id")
@@ -374,14 +262,14 @@ namespace WLDataLayer.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "d2996295-cfa1-49b1-b59f-b3333d62c151",
+                            ConcurrencyStamp = "f52cbf84-ed44-4f80-a6be-d764a964918b",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "b2a3c4f7-a520-4317-ab7c-fb8791a5ec67",
+                            ConcurrencyStamp = "d3f5c4e2-54a6-44fc-8571-6772bc262fa1",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -542,33 +430,6 @@ namespace WLDataLayer.Migrations
                     b.Navigation("Achievement");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("WLDataLayer.DAL.Entities.UserStatistic", b =>
-                {
-                    b.HasOne("WLDataLayer.Identity.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("WLDataLayer.DAL.Entities.Word", b =>
-                {
-                    b.HasOne("WLDataLayer.DAL.Entities.Category", "Category")
-                        .WithMany("Words")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("WLDataLayer.DAL.Entities.Category", b =>
-                {
-                    b.Navigation("Words");
                 });
 #pragma warning restore 612, 618
         }

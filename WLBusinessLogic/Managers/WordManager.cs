@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using WLBusinessLogic.Interfaces;
 using WLCommon.Helpers;
+using WLCommon.Models.Request;
 using WLCommon.Models.Response;
 using WLDataLayer.DAL.Interfaces;
 using WLDataLayer.DAL.StoreEntities;
@@ -129,7 +130,7 @@ namespace WLBusinessLogic.Managers
             return response;
         }
 
-        public async Task<WordResponseModel> GetBlitzWordAsync(int difficulty,bool isRandomDifficulty = false)
+        public async Task<WordResponseModel> GetBlitzWordAsync(int difficulty, bool isRandomDifficulty = false)
         {
             Random random = new Random();
             List<Word> words = await _wordStoreService.GetAsync();
@@ -138,12 +139,12 @@ namespace WLBusinessLogic.Managers
 
             if (isRandomDifficulty)
             {
-                selectedWord = words[random.Next(0,words.Count)];
+                selectedWord = words[random.Next(0, words.Count)];
             }
             else
             {
                 List<Word> wordDiffList = words.Where(x => x.Difficulty == difficulty).ToList();
-                selectedWord = wordDiffList[random.Next(0,wordDiffList.Count)];
+                selectedWord = wordDiffList[random.Next(0, wordDiffList.Count)];
             }
 
             List<string> answerVariants = WordHelper.GetWordAnswersVariants(selectedWord.CorrectAnswer, selectedWord.WrongVariants);
@@ -157,6 +158,31 @@ namespace WLBusinessLogic.Managers
             };
 
             return response;
+        }
+
+        public async Task<AnswerResponseModel> SubmitAnswerAsync(AnswerRequestModel request, int userId)
+        {
+            List<Word> wordList = await _wordStoreService.GetAsync(x => x.Id == request.WordId);
+            Word word = wordList.FirstOrDefault();
+
+            if (word == null)
+            {
+                ExceptionHelper.ThrowResourseNotfound("word_not_found");
+            }
+
+            bool isCorrect = word.CorrectAnswer == request.WordAnswer;
+
+            Answer answer = new Answer
+            {
+                UserId = userId,
+                TimeSpent = request.TimeSpent,
+                WordId = word.Id,
+                IsCorrect = isCorrect
+            };
+
+            await _answerStoreService.AddAsync(answer);
+
+            return new AnswerResponseModel { WordId = word.Id, IsCorrect = isCorrect };
         }
     }
 }

@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace WLDataLayer.Migrations
 {
-    public partial class entities : Migration
+    public partial class first : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -26,25 +26,6 @@ namespace WLDataLayer.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Achievements", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Categories",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Name = table.Column<string>(type: "text", nullable: true),
-                    CategoryLevel = table.Column<int>(type: "integer", nullable: false),
-                    IsEnabled = table.Column<bool>(type: "boolean", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    CreatedById = table.Column<int>(type: "integer", nullable: true),
-                    UpdatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    UpdatedById = table.Column<int>(type: "integer", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -89,33 +70,6 @@ namespace WLDataLayer.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Words",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    MainWord = table.Column<string>(type: "text", nullable: true),
-                    Transcription = table.Column<string>(type: "text", nullable: true),
-                    Translation_RU = table.Column<string>(type: "text", nullable: true),
-                    DifficultyLevel = table.Column<int>(type: "integer", nullable: false),
-                    CategoryId = table.Column<int>(type: "integer", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    CreatedById = table.Column<int>(type: "integer", nullable: true),
-                    UpdatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    UpdatedById = table.Column<int>(type: "integer", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Words", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Words_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -260,31 +214,6 @@ namespace WLDataLayer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserStatistics",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    UserId = table.Column<int>(type: "integer", nullable: false),
-                    Rating = table.Column<int>(type: "integer", nullable: false),
-                    WordCount = table.Column<int>(type: "integer", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    CreatedById = table.Column<int>(type: "integer", nullable: true),
-                    UpdatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    UpdatedById = table.Column<int>(type: "integer", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserStatistics", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_UserStatistics_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "UsersTokens",
                 columns: table => new
                 {
@@ -307,7 +236,11 @@ namespace WLDataLayer.Migrations
             migrationBuilder.InsertData(
                 table: "Roles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { 1, "2a59f72c-5384-47af-8b34-6b914ecc4ab4", "User", "USER" });
+                values: new object[,]
+                {
+                    { 1, "f52cbf84-ed44-4f80-a6be-d764a964918b", "Admin", "ADMIN" },
+                    { 2, "d3f5c4e2-54a6-44fc-8571-6772bc262fa1", "User", "USER" }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_RefreshTokens_UserId",
@@ -360,16 +293,6 @@ namespace WLDataLayer.Migrations
                 table: "Users",
                 column: "NormalizedUserName",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserStatistics_UserId",
-                table: "UserStatistics",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Words_CategoryId",
-                table: "Words",
-                column: "CategoryId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -393,13 +316,7 @@ namespace WLDataLayer.Migrations
                 name: "UserRoles");
 
             migrationBuilder.DropTable(
-                name: "UserStatistics");
-
-            migrationBuilder.DropTable(
                 name: "UsersTokens");
-
-            migrationBuilder.DropTable(
-                name: "Words");
 
             migrationBuilder.DropTable(
                 name: "Achievements");
@@ -409,9 +326,6 @@ namespace WLDataLayer.Migrations
 
             migrationBuilder.DropTable(
                 name: "Users");
-
-            migrationBuilder.DropTable(
-                name: "Categories");
         }
     }
 }
