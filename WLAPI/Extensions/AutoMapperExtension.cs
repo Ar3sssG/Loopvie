@@ -1,5 +1,6 @@
 ﻿using ASBusinessLogic.MapperProfiles;
 using AutoMapper;
+using WLBusinessLogic.MapperProfiles;
 
 namespace WLAPI.Extensions
 {
@@ -12,6 +13,7 @@ namespace WLAPI.Extensions
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile<PagedListProfile>();
+                mc.AddProfile<WordProfile>();
             });
 
             IMapper mapper = mapperConfig.CreateMapper();

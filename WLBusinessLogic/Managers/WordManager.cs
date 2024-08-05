@@ -184,5 +184,30 @@ namespace WLBusinessLogic.Managers
 
             return new AnswerResponseModel { WordId = word.Id, IsCorrect = isCorrect };
         }
+
+        public async Task<List<WordCreateResponseModel>> AddWordsAsync(List<WordRequestModel> words)
+        {
+            List<WordCreateResponseModel> response = new List<WordCreateResponseModel>();
+            List<Word> existingWords = await _wordStoreService.GetAsync();
+            foreach (WordRequestModel item in words)
+            {
+                if (existingWords.Select(x => x.Text).Contains(item.Word))
+                {
+                    response.Add(new WordCreateResponseModel { Word = item.Word, Message = "word_already_exists" });
+                }
+                try
+                {
+                    Word newWord = _mapper.Map<Word>(item);
+
+                    await _wordStoreService.AddAsync(newWord);
+                }
+                catch (Exception ex)
+                {
+                    response.Add(new WordCreateResponseModel { Word = item.Word, Message = ex.Message });
+                }
+            }
+
+            return response;
+        }
     }
 }

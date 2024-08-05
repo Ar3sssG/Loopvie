@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WLBusinessLogic.Interfaces;
 using WLCommon.Models.Error;
@@ -60,5 +61,18 @@ namespace WLAPI.Controllers
             return Ok(response);
         }
 
+        /// <summary>
+        /// Add new words to storage
+        /// </summary>
+        /// <returns>Ok</returns>
+        [HttpPost]
+        [Authorize(AuthenticationSchemes = "Bearer",Roles = "Admin")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status409Conflict)]
+        public async Task<IActionResult> AddNewWords(List<WordRequestModel> words)
+        {
+            List<WordCreateResponseModel> response = await _wordManager.AddWordsAsync(words);
+            return Ok(response);
+        }
     }
 }

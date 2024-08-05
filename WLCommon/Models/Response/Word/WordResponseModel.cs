@@ -7,4 +7,10 @@ namespace WLCommon.Models.Response
         public string Text { get; set; }
         public List<string> Variants { get; set; }
     }
+
+    public class WordCreateResponseModel
+    {
+        public string Word { get; set; }
+        public string Message { get; set; }
+    }
 }
