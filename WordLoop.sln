@@ -5,11 +5,13 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WLAPI", "WLAPI\WLAPI.csproj", "{3EF52139-5BA7-44F4-9719-3387CC978EB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLBusinessLogic", "WLBusinessLogic\WLBusinessLogic.csproj", "{050A5DA1-1041-48C4-A04F-3CC94D01C086}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WLBusinessLogic", "WLBusinessLogic\WLBusinessLogic.csproj", "{050A5DA1-1041-48C4-A04F-3CC94D01C086}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLCommon", "WLCommon\WLCommon.csproj", "{C79678A8-437D-4FB8-BAAB-3FD4F70E0982}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WLCommon", "WLCommon\WLCommon.csproj", "{C79678A8-437D-4FB8-BAAB-3FD4F70E0982}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLDataLayer", "WLDataLayer\WLDataLayer.csproj", "{90ACBDDF-53DA-4787-9EFF-81AC1D37F665}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WLDataLayer", "WLDataLayer\WLDataLayer.csproj", "{90ACBDDF-53DA-4787-9EFF-81AC1D37F665}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordLoop", "WordLoop\WordLoop.csproj", "{8709F103-AD80-4FEE-9EAB-5FC27ABC2580}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,12 @@ Global
 		{90ACBDDF-53DA-4787-9EFF-81AC1D37F665}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90ACBDDF-53DA-4787-9EFF-81AC1D37F665}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90ACBDDF-53DA-4787-9EFF-81AC1D37F665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8709F103-AD80-4FEE-9EAB-5FC27ABC2580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8709F103-AD80-4FEE-9EAB-5FC27ABC2580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8709F103-AD80-4FEE-9EAB-5FC27ABC2580}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8709F103-AD80-4FEE-9EAB-5FC27ABC2580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8709F103-AD80-4FEE-9EAB-5FC27ABC2580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8709F103-AD80-4FEE-9EAB-5FC27ABC2580}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
