@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using WordLoop.ViewModels;
 
 namespace WordLoop
 {
@@ -18,7 +19,11 @@ namespace WordLoop
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainViewModel>();
 
+            builder.Services.AddTransient<DetailPage>();
+            builder.Services.AddTransient<DetailViewModel>();
             return builder.Build();
         }
     }
