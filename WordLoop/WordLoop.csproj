@@ -57,7 +57,17 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="appsettings.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="appsettings.json" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
@@ -76,6 +86,10 @@
 	  <Folder Include="Pages\Blitz\" />
 	  <Folder Include="Pages\Account\" />
 	  <Folder Include="Pages\Loop\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\WLCommon\WLCommon.csproj" />
 	</ItemGroup>
 
 </Project>
