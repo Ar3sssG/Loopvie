@@ -67,6 +67,15 @@
 	  <MauiXaml Update="DetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\Login\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Pages\Blitz\" />
+	  <Folder Include="Pages\Account\" />
+	  <Folder Include="Pages\Loop\" />
 	</ItemGroup>
 
 </Project>
