@@ -63,19 +63,5 @@ namespace WLAPI.Controllers
             AuthResponseModel response = await _identityManager.AuthenticateByRefreshTokenAsync(requestModel);
             return Ok(response);
         }
-
-        /// <summary>
-        /// Check is token expired
-        /// </summary>
-        /// <param name="token"></param>
-        /// <returns>true or false</returns>
-        [HttpPost]
-        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status401Unauthorized)]
-        public async Task<IActionResult> CheckToken([FromHeader(Name = "Authorization")] string token)
-        {
-            bool response = await _identityManager.CheckTokenAsync(token); 
-            return Ok(response);
-        }
     }
 }
