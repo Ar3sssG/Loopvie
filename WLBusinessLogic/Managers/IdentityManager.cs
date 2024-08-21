@@ -133,6 +133,24 @@ namespace WLBusinessLogic.Managers
             return response;
         }
 
+        public async Task<bool> CheckTokenAsync(string accessToken)
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var token = handler.ReadJwtToken(accessToken);
+
+            if (token != null)
+            {
+                var expirationClaim = token.Claims.FirstOrDefault(x => x.Type == JwtRegisteredClaimNames.Exp);
+                if (expirationClaim != null)
+                {
+                    var expirationDate = DateTimeOffset.FromUnixTimeSeconds(long.Parse(expirationClaim.Value)).UtcDateTime;
+                    return await Task.FromResult(DateTime.UtcNow < expirationDate);
+                }
+            }
+
+            return await Task.FromResult(false);
+        }
+
         #region PrivateMethods
 
         private async Task<AuthResponseModel> Authenticate(User user, string password, bool isRefreshTokenRequest = false)

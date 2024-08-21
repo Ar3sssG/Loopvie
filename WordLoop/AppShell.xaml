@@ -3,13 +3,29 @@
     x:Class="WordLoop.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:WordLoop.Pages.Login"
+    xmlns:leaderboard="clr-namespace:WordLoop.Pages.Leaderboard"
+    xmlns:blitz="clr-namespace:WordLoop.Pages.Blitz"
+    xmlns:loop="clr-namespace:WordLoop.Pages.Loop"
+    xmlns:account="clr-namespace:WordLoop.Pages.Account"
     Shell.FlyoutBehavior="Disabled"
     Title="WordLoop">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="LoginPage" />
+    <TabBar>
+        <Tab Title="Loop" Icon="loop_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate loop:LoopPage}" />
+        </Tab>
+        
+        <Tab Title="Blitz" Icon="blitz_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate blitz:BlitzPage}" />
+        </Tab>
+
+        <Tab Title="Leaderboard" Icon="leaderboard_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate leaderboard:LeaderboardPage}" />
+        </Tab>
+
+        <Tab Title="Account" Icon="account_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate account:AccountPage}" />
+        </Tab>
+    </TabBar>
 
 </Shell>

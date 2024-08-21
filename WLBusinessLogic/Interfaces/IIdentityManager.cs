@@ -11,5 +11,6 @@ namespace WLBusinessLogic.Interfaces
         Task<AuthResponseModel> AuthenticateUserAsync(AuthRequestModel requestModel);
         Task<AuthResponseModel> RegisterUserAsync(RegisterRequestModel requestModel);
         Task<AuthResponseModel> AuthenticateByRefreshTokenAsync(RefreshTokenRequestModel requestModel);
+        Task<bool> CheckTokenAsync(string accessToken);
     }
 }
