@@ -95,7 +95,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\WLCommon\WLCommon.csproj" />
+	  <ProjectReference Include="..\WLCommon\LoopvieCommon.csproj" />
 	</ItemGroup>
 
 </Project>

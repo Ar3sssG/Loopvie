@@ -9,7 +9,7 @@ namespace WLAPI.Extensions
             services.AddSwaggerGen(options =>
             {
 
-                options.SwaggerDoc($"v1", new OpenApiInfo { Title = "WordLoop API" });
+                options.SwaggerDoc($"v1", new OpenApiInfo { Title = "Loopvie API" });
 
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                 {
