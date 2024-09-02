@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="Loopvie.Pages.SpashScreen.SplashPage"
+             Title="SplashPage">
+
+    <Page.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="Red" />
+    </Page.Behaviors>
+    
+    <Grid BackgroundColor="{StaticResource BackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackLayout Grid.Row="0" 
+                     Grid.Column="0" 
+                     VerticalOptions="Center" 
+                     HorizontalOptions="Center"
+                     Spacing="10">
+            
+            <Image Source="splash_logo.svg" 
+                   WidthRequest="202" 
+                   HeightRequest="62" 
+                   HorizontalOptions="Center" />
+            <Label Text="The first word learning program 🎓" 
+                   HorizontalOptions="Center" 
+                   FontSize="12" 
+                   FontFamily="IBMPlexMonoRegular"
+                   TextColor="{StaticResource TextColor}"/>
+        </StackLayout>
+
+        <!-- Bottom centered text -->
+        <Label Text="All rights reserved ®" 
+               Grid.Row="1" 
+               Grid.Column="0" 
+               HorizontalOptions="Center" 
+               VerticalOptions="End" 
+               Margin="0,0,0,20" 
+               FontSize="12" 
+               FontFamily="IBMPlexMonoRegular"
+               TextColor="{StaticResource TextColor}"/>
+    </Grid>
+</ContentPage>

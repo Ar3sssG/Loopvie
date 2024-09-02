@@ -4,6 +4,7 @@ using System.Reflection;
 using Loopvie.Extensions;
 using Loopvie.ViewModels;
 using Microsoft.Extensions.Configuration.Json;
+using CommunityToolkit.Maui;
 
 namespace Loopvie
 {
@@ -14,6 +15,7 @@ namespace Loopvie
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

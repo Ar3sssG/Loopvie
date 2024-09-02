@@ -65,6 +65,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.3" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
@@ -86,10 +87,16 @@
 	  <MauiXaml Update="Pages\Leaderboard\LeaderboardPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\Login\LoginPage.xaml">
+	  <MauiXaml Update="Pages\Signin\SigninPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Loop\LoopPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Signup\SignupPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\SpashScreen\SplashPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
@@ -100,6 +107,12 @@
 
 	<ItemGroup>
 	  <Folder Include="Resources\Fonts\IBM Plex Mono\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Pages\Signin\SigninPage.xaml.cs">
+	    <DependentUpon>SigninPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

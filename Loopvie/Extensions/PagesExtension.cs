@@ -1,4 +1,4 @@
-﻿using Loopvie.Pages.Login;
+﻿using Loopvie.Pages.Signin;
 
 namespace Loopvie.Extensions
 {
@@ -7,7 +7,7 @@ namespace Loopvie.Extensions
         public static void AddPages(this IServiceCollection services)
         {
             services.AddSingleton<MainPage>();
-            services.AddSingleton<LoginPage>();
+            services.AddSingleton<SigninPage>();
             services.AddSingleton<DetailPage>();
         }
     }
