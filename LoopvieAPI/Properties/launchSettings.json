@@ -8,7 +8,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "WordLoop": {
+    "Loopvie Kestrel": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
