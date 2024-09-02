@@ -1,5 +1,5 @@
 ﻿
-namespace WLDataLayer.DAL.StoreServices.StoresSettings
+namespace LoopvieDataLayer.DAL.StoreServices.StoresSettings
 {
     public class WordStoreServiceSettings : IStoreServiceSettings
     {

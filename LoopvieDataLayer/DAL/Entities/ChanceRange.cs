@@ -1,5 +1,5 @@
 ﻿
-namespace WLDataLayer.DAL.Entities
+namespace LoopvieDataLayer.DAL.Entities
 {
     public class ChanceRange : BaseEntity
     {

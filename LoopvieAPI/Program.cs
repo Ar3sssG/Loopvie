@@ -1,8 +1,8 @@
-using WLDataLayer.DAL;
-using WLAPI.Extensions;
-using WLDataLayer.DAL.Interfaces;
+using LoopvieDataLayer.DAL;
+using LoopvieAPI.Extensions;
+using LoopvieDataLayer.DAL.Interfaces;
 
-namespace WLAPI
+namespace LoopvieAPI
 {
     public class Program
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace WLCommon.Models.Response
+namespace LoopvieCommon.Models.Response
 {
     public class WordResponseModel
     {

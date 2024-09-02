@@ -1,8 +1,8 @@
-﻿using WLCommon.Exceptions;
+﻿using LoopvieCommon.Exceptions;
 using Newtonsoft.Json;
-using WLCommon.Models.Error;
+using LoopvieCommon.Models.Error;
 
-namespace WLCommon.Helpers
+namespace LoopvieCommon.Helpers
 {
     
     public static class ExceptionHelper

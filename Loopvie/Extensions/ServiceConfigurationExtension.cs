@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
-using WordLoop.Services;
-using WordLoop.Settings;
+using Loopvie.Services;
+using Loopvie.Settings;
 
-namespace WordLoop.Extensions
+namespace Loopvie.Extensions
 {
     public static class ServiceConfigurationExtension
     {

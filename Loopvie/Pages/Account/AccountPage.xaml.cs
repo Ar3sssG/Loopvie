@@ -1,4 +1,4 @@
-namespace WordLoop.Pages.Account;
+namespace Loopvie.Pages.Account;
 
 public partial class AccountPage : ContentPage
 {

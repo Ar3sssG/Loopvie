@@ -1,9 +1,9 @@
 ﻿using System.Net.Http.Json;
 using System.Text.Json;
-using WLCommon.Models.Request;
-using WordLoop.Settings;
+using LoopvieCommon.Models.Request;
+using Loopvie.Settings;
 
-namespace WordLoop.Services
+namespace Loopvie.Services
 {
     public class ApiClientService
     {

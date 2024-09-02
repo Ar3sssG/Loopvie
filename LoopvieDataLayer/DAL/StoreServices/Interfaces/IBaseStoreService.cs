@@ -2,7 +2,7 @@
 using MongoDB.Driver;
 using System.Linq.Expressions;
 
-namespace WLDataLayer.DAL.StoreServices.Interfaces
+namespace LoopvieDataLayer.DAL.StoreServices.Interfaces
 {
     public interface IBaseStoreService<T>
     {

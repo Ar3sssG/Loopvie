@@ -1,6 +1,6 @@
 ﻿using Npgsql;
 
-namespace WLDataLayer.DAL.Interfaces
+namespace LoopvieDataLayer.DAL.Interfaces
 {
     public interface IUnitOfWork
     {

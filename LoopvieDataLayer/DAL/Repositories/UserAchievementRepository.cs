@@ -1,13 +1,13 @@
 ﻿using Npgsql;
-using WLDataLayer.DAL.DBContext;
-using WLDataLayer.DAL.Entities;
-using WLDataLayer.DAL.Interfaces;
+using LoopvieDataLayer.DAL.DBContext;
+using LoopvieDataLayer.DAL.Entities;
+using LoopvieDataLayer.DAL.Interfaces;
 
-namespace WLDataLayer.DAL.Repositories
+namespace LoopvieDataLayer.DAL.Repositories
 {
     public class UserAchievementRepository : BaseRepository<UserAchievement>, IUserAchievementRepository
     {
-        public UserAchievementRepository(NpgsqlTransaction transaction, WLDBContext dbContext) : base(dbContext)
+        public UserAchievementRepository(NpgsqlTransaction transaction, LoopvieDBContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }

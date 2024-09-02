@@ -1,7 +1,7 @@
-﻿using WLDataLayer.Identity;
+﻿using LoopvieDataLayer.Identity;
 using System.ComponentModel.DataAnnotations;
 
-namespace WLDataLayer.DAL.Entities
+namespace LoopvieDataLayer.DAL.Entities
 {
     public class RefreshToken : BaseEntity
     {

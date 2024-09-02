@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using WLBusinessLogic.Interfaces;
-using WLDataLayer.DAL.Interfaces;
+using LoopvieBusinessLogic.Interfaces;
+using LoopvieDataLayer.DAL.Interfaces;
 
-namespace WLBusinessLogic.Managers
+namespace LoopvieBusinessLogic.Managers
 {
     public class BaseManager : IBaseManager
     {

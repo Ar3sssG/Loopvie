@@ -1,6 +1,6 @@
-using WordLoop.ViewModels;
+using Loopvie.ViewModels;
 
-namespace WordLoop;
+namespace Loopvie;
 
 public partial class DetailPage : ContentPage
 {

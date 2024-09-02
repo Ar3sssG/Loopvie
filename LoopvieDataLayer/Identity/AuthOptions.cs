@@ -1,8 +1,8 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using WLCommon.Constants;
+using LoopvieCommon.Constants;
 
-namespace WLDataLayer.Identity
+namespace LoopvieDataLayer.Identity
 {
     public static class AuthOptions
     {

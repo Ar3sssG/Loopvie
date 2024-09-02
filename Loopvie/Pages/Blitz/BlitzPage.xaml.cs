@@ -1,4 +1,4 @@
-namespace WordLoop.Pages.Blitz;
+namespace Loopvie.Pages.Blitz;
 
 public partial class BlitzPage : ContentPage
 {

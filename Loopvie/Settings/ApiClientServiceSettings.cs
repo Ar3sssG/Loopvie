@@ -1,5 +1,5 @@
 ﻿
-namespace WordLoop.Settings
+namespace Loopvie.Settings
 {
     public class ApiClientServiceSettings
     {

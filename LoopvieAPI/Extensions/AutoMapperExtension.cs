@@ -1,8 +1,8 @@
 ﻿using ASBusinessLogic.MapperProfiles;
 using AutoMapper;
-using WLBusinessLogic.MapperProfiles;
+using LoopvieBusinessLogic.MapperProfiles;
 
-namespace WLAPI.Extensions
+namespace LoopvieAPI.Extensions
 {
     public static class AutoMapperExtension
     {

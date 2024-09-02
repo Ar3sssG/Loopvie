@@ -19,8 +19,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\WLBusinessLogic\LoopvieBusinessLogic.csproj" />
-		<ProjectReference Include="..\WLDataLayer\LoopvieDataLayer.csproj" />
+		<ProjectReference Include="..\LoopvieBusinessLogic\LoopvieBusinessLogic.csproj" />
+		<ProjectReference Include="..\LoopvieDataLayer\LoopvieDataLayer.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace WordLoop
+namespace Loopvie
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate

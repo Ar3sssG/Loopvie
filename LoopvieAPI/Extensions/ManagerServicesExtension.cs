@@ -1,7 +1,7 @@
-﻿using WLBusinessLogic.Interfaces;
-using WLBusinessLogic.Managers;
+﻿using LoopvieBusinessLogic.Interfaces;
+using LoopvieBusinessLogic.Managers;
 
-namespace WLAPI.Extensions
+namespace LoopvieAPI.Extensions
 {
     public static class ManagerServicesExtension
     {

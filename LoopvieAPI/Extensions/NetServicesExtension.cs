@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using WLDataLayer.DAL.DBContext;
-using WLDataLayer.Identity;
+using LoopvieDataLayer.DAL.DBContext;
+using LoopvieDataLayer.Identity;
 
-namespace WLAPI.Extensions
+namespace LoopvieAPI.Extensions
 {
     public static class NetServicesExtension
     {
@@ -18,7 +18,7 @@ namespace WLAPI.Extensions
                     .AllowCredentials());
             });
 
-            services.AddDbContext<WLDBContext>(options =>
+            services.AddDbContext<LoopvieDBContext>(options =>
                 options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))
                 .EnableSensitiveDataLogging());
 
@@ -30,7 +30,7 @@ namespace WLAPI.Extensions
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireDigit = false;
             })
-              .AddEntityFrameworkStores<WLDBContext>()
+              .AddEntityFrameworkStores<LoopvieDBContext>()
               .AddDefaultTokenProviders();
         }
     }

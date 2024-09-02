@@ -1,7 +1,7 @@
 ﻿
-using WLDataLayer.DAL.StoreEntities;
+using LoopvieDataLayer.DAL.StoreEntities;
 
-namespace WLDataLayer.DAL.StoreServices.Interfaces
+namespace LoopvieDataLayer.DAL.StoreServices.Interfaces
 {
     public interface IAnswerStoreService : IBaseStoreService<Answer>
     {

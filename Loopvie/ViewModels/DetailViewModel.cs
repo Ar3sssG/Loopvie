@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace WordLoop.ViewModels
+namespace Loopvie.ViewModels
 {
     [QueryProperty("Text","Text")]
     public partial class DetailViewModel : ObservableObject

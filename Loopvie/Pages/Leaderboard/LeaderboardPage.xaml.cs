@@ -1,4 +1,4 @@
-namespace WordLoop.Pages.Leaderboard;
+namespace Loopvie.Pages.Leaderboard;
 
 public partial class LeaderboardPage : ContentPage
 {

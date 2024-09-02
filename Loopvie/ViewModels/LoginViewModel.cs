@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace WordLoop.ViewModels
+namespace Loopvie.ViewModels
 {
     public partial class LoginViewModel : ObservableObject
     {

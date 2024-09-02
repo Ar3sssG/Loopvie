@@ -1,5 +1,5 @@
 ﻿
-namespace WLCommon.Constants
+namespace LoopvieCommon.Constants
 {
     public static class AuthErrorConstants
     {

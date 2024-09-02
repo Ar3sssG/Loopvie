@@ -1,4 +1,4 @@
-﻿namespace WLCommon.Helpers
+﻿namespace LoopvieCommon.Helpers
 {
     public static class WordHelper
     {

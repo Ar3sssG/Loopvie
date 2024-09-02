@@ -1,5 +1,5 @@
 ﻿
-namespace WLCommon.Models.Manager
+namespace LoopvieCommon.Models.Manager
 {
     public class RefreshTokenModel
     {

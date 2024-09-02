@@ -1,7 +1,7 @@
-﻿using WLCommon.Models.Request;
-using WLCommon.Models.Response;
+﻿using LoopvieCommon.Models.Request;
+using LoopvieCommon.Models.Response;
 
-namespace WLBusinessLogic.Interfaces
+namespace LoopvieBusinessLogic.Interfaces
 {
     public interface IWordManager
     {

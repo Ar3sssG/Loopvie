@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace WLDataLayer.Migrations
+namespace LoopvieDataLayer.Migrations
 {
     public partial class first : Migration
     {

@@ -5,17 +5,17 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using WLBusinessLogic.Interfaces;
-using WLCommon.Constants;
-using WLCommon.Helpers;
-using WLCommon.Models.Manager;
-using WLCommon.Models.Request;
-using WLCommon.Models.Response;
-using WLDataLayer.DAL.Entities;
-using WLDataLayer.DAL.Interfaces;
-using WLDataLayer.Identity;
+using LoopvieBusinessLogic.Interfaces;
+using LoopvieCommon.Constants;
+using LoopvieCommon.Helpers;
+using LoopvieCommon.Models.Manager;
+using LoopvieCommon.Models.Request;
+using LoopvieCommon.Models.Response;
+using LoopvieDataLayer.DAL.Entities;
+using LoopvieDataLayer.DAL.Interfaces;
+using LoopvieDataLayer.Identity;
 
-namespace WLBusinessLogic.Managers
+namespace LoopvieBusinessLogic.Managers
 {
     public class IdentityManager : BaseManager, IIdentityManager
     {

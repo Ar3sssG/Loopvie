@@ -1,5 +1,5 @@
 ﻿
-namespace WLBusinessLogic.Interfaces
+namespace LoopvieBusinessLogic.Interfaces
 {
     public interface IBaseManager
     {

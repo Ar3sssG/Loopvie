@@ -2,16 +2,16 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using WLDataLayer.DAL.Entities;
-using WLDataLayer.Identity;
+using LoopvieDataLayer.DAL.Entities;
+using LoopvieDataLayer.Identity;
 
-namespace WLDataLayer.DAL.DBContext
+namespace LoopvieDataLayer.DAL.DBContext
 {
-    public class WLDBContext : IdentityDbContext<User, Role, int>
+    public class LoopvieDBContext : IdentityDbContext<User, Role, int>
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public WLDBContext(DbContextOptions<WLDBContext> options, IHttpContextAccessor httpContextAccessor)
+        public LoopvieDBContext(DbContextOptions<LoopvieDBContext> options, IHttpContextAccessor httpContextAccessor)
             : base(options)
         {
             _httpContextAccessor = httpContextAccessor;

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace WLDataLayer.Identity
+namespace LoopvieDataLayer.Identity
 {
     public class User : IdentityUser<int>
     {

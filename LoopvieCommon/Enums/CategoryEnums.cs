@@ -1,5 +1,5 @@
 ﻿
-namespace WLCommon.Enums
+namespace LoopvieCommon.Enums
 {
     public enum CategoryLevel
     {

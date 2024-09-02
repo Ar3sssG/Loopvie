@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using WLDataLayer.DAL.StoreEntities;
-using WLDataLayer.DAL.StoreServices.Interfaces;
-using WLDataLayer.DAL.StoreServices.StoresSettings;
+using LoopvieDataLayer.DAL.StoreEntities;
+using LoopvieDataLayer.DAL.StoreServices.Interfaces;
+using LoopvieDataLayer.DAL.StoreServices.StoresSettings;
 
-namespace WLDataLayer.DAL.StoreServices
+namespace LoopvieDataLayer.DAL.StoreServices
 {
     public class AnswerStoreService : BaseStoreService<Answer, AnswerStoreServiceSettings>, IAnswerStoreService
     {

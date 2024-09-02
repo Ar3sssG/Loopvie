@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using WLDataLayer.Identity;
+using LoopvieDataLayer.Identity;
 
-namespace WLAPI.Controllers
+namespace LoopvieAPI.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]

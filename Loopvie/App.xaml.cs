@@ -1,4 +1,4 @@
-﻿namespace WordLoop
+﻿namespace Loopvie
 {
     public partial class App : Application
     {

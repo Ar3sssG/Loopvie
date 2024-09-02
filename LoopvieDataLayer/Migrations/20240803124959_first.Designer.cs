@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using WLDataLayer.DAL.DBContext;
+using LoopvieDataLayer.DAL.DBContext;
 
 #nullable disable
 
-namespace WLDataLayer.Migrations
+namespace LoopvieDataLayer.Migrations
 {
-    [DbContext(typeof(WLDBContext))]
+    [DbContext(typeof(LoopvieDBContext))]
     [Migration("20240803124959_first")]
     partial class first
     {
@@ -127,7 +127,7 @@ namespace WLDataLayer.Migrations
                     b.ToTable("UsersTokens", (string)null);
                 });
 
-            modelBuilder.Entity("WLDataLayer.DAL.Entities.Achievement", b =>
+            modelBuilder.Entity("LoopvieDataLayer.DAL.Entities.Achievement", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -158,7 +158,7 @@ namespace WLDataLayer.Migrations
                     b.ToTable("Achievements");
                 });
 
-            modelBuilder.Entity("WLDataLayer.DAL.Entities.RefreshToken", b =>
+            modelBuilder.Entity("LoopvieDataLayer.DAL.Entities.RefreshToken", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -195,7 +195,7 @@ namespace WLDataLayer.Migrations
                     b.ToTable("RefreshTokens");
                 });
 
-            modelBuilder.Entity("WLDataLayer.DAL.Entities.UserAchievement", b =>
+            modelBuilder.Entity("LoopvieDataLayer.DAL.Entities.UserAchievement", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -230,7 +230,7 @@ namespace WLDataLayer.Migrations
                     b.ToTable("UserAchievements");
                 });
 
-            modelBuilder.Entity("WLDataLayer.Identity.Role", b =>
+            modelBuilder.Entity("LoopvieDataLayer.Identity.Role", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -275,7 +275,7 @@ namespace WLDataLayer.Migrations
                         });
                 });
 
-            modelBuilder.Entity("WLDataLayer.Identity.User", b =>
+            modelBuilder.Entity("LoopvieDataLayer.Identity.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -353,7 +353,7 @@ namespace WLDataLayer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
-                    b.HasOne("WLDataLayer.Identity.Role", null)
+                    b.HasOne("LoopvieDataLayer.Identity.Role", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -362,7 +362,7 @@ namespace WLDataLayer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
                 {
-                    b.HasOne("WLDataLayer.Identity.User", null)
+                    b.HasOne("LoopvieDataLayer.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -371,7 +371,7 @@ namespace WLDataLayer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
-                    b.HasOne("WLDataLayer.Identity.User", null)
+                    b.HasOne("LoopvieDataLayer.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -380,13 +380,13 @@ namespace WLDataLayer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
                 {
-                    b.HasOne("WLDataLayer.Identity.Role", null)
+                    b.HasOne("LoopvieDataLayer.Identity.Role", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WLDataLayer.Identity.User", null)
+                    b.HasOne("LoopvieDataLayer.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -395,16 +395,16 @@ namespace WLDataLayer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
                 {
-                    b.HasOne("WLDataLayer.Identity.User", null)
+                    b.HasOne("LoopvieDataLayer.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("WLDataLayer.DAL.Entities.RefreshToken", b =>
+            modelBuilder.Entity("LoopvieDataLayer.DAL.Entities.RefreshToken", b =>
                 {
-                    b.HasOne("WLDataLayer.Identity.User", "User")
+                    b.HasOne("LoopvieDataLayer.Identity.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -413,15 +413,15 @@ namespace WLDataLayer.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("WLDataLayer.DAL.Entities.UserAchievement", b =>
+            modelBuilder.Entity("LoopvieDataLayer.DAL.Entities.UserAchievement", b =>
                 {
-                    b.HasOne("WLDataLayer.DAL.Entities.Achievement", "Achievement")
+                    b.HasOne("LoopvieDataLayer.DAL.Entities.Achievement", "Achievement")
                         .WithMany()
                         .HasForeignKey("AchievementId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WLDataLayer.Identity.User", "User")
+                    b.HasOne("LoopvieDataLayer.Identity.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

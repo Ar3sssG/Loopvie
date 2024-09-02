@@ -1,6 +1,6 @@
-﻿using WLAPI.Middlewares;
+﻿using LoopvieAPI.Middlewares;
 
-namespace WLAPI.Extensions
+namespace LoopvieAPI.Extensions
 {
     public static class SwaggerAuthExtension
     {

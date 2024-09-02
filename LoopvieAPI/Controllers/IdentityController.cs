@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using WLBusinessLogic.Interfaces;
-using WLCommon.Models.Error;
-using WLCommon.Models.Request;
-using WLCommon.Models.Response;
-using WLDataLayer.Identity;
+using LoopvieBusinessLogic.Interfaces;
+using LoopvieCommon.Models.Error;
+using LoopvieCommon.Models.Request;
+using LoopvieCommon.Models.Response;
+using LoopvieDataLayer.Identity;
 
-namespace WLAPI.Controllers
+namespace LoopvieAPI.Controllers
 {
     public class IdentityController : BaseController
     {

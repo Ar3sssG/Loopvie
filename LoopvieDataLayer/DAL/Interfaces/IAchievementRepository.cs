@@ -1,6 +1,6 @@
-﻿using WLDataLayer.DAL.Entities;
+﻿using LoopvieDataLayer.DAL.Entities;
 
-namespace WLDataLayer.DAL.Interfaces
+namespace LoopvieDataLayer.DAL.Interfaces
 {
     public interface IAchievementRepository : IBaseRepository<Achievement>
     {

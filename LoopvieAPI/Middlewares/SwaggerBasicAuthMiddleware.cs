@@ -2,7 +2,7 @@
 using System.Net;
 using System.Text;
 
-namespace WLAPI.Middlewares
+namespace LoopvieAPI.Middlewares
 {
     public class SwaggerBasicAuthMiddleware
     {

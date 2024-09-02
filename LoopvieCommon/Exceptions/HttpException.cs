@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace WLCommon.Exceptions
+namespace LoopvieCommon.Exceptions
 {
     public class HttpException : Exception
     {

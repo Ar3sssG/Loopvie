@@ -1,6 +1,6 @@
-﻿using WordLoop.ViewModels;
+﻿using Loopvie.ViewModels;
 
-namespace WordLoop.Extensions
+namespace Loopvie.Extensions
 {
     public static class ViewModelsExtension
     {

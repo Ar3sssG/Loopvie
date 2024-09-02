@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace WLCommon.Models.Request
+namespace LoopvieCommon.Models.Request
 {
     public class AuthRequestModel
     {

@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Reflection;
-using WordLoop.Extensions;
-using WordLoop.ViewModels;
+using Loopvie.Extensions;
+using Loopvie.ViewModels;
 using Microsoft.Extensions.Configuration.Json;
 
-namespace WordLoop
+namespace Loopvie
 {
     public static class MauiProgram
     {
@@ -18,6 +18,7 @@ namespace WordLoop
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("IBMPlexMono-Regular.ttf", "IBMPlexMonoRegular");
                 });
 
             var assembly = Assembly.GetExecutingAssembly();

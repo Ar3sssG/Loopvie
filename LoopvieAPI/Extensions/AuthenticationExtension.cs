@@ -2,11 +2,11 @@
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using System.Text;
-using WLCommon.Constants;
-using WLCommon.Models.Response;
-using WLDataLayer.Identity;
+using LoopvieCommon.Constants;
+using LoopvieCommon.Models.Response;
+using LoopvieDataLayer.Identity;
 
-namespace WLAPI.Extensions
+namespace LoopvieAPI.Extensions
 {
     public static class AuthenticationExtension
     {

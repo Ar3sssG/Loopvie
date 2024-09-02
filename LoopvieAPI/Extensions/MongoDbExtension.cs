@@ -1,7 +1,7 @@
-﻿using WLDataLayer.DAL.StoreServices;
-using WLDataLayer.DAL.StoreServices.StoresSettings;
+﻿using LoopvieDataLayer.DAL.StoreServices;
+using LoopvieDataLayer.DAL.StoreServices.StoresSettings;
 
-namespace WLAPI.Extensions
+namespace LoopvieAPI.Extensions
 {
     public static class MongoDbExtension
     {

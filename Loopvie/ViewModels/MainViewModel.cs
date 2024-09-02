@@ -2,7 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
 
-namespace WordLoop.ViewModels
+namespace Loopvie.ViewModels
 {
     public partial class MainViewModel : ObservableObject
     {

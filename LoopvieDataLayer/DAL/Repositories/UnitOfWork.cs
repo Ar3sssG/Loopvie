@@ -1,17 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Npgsql;
-using WLDataLayer.DAL.DBContext;
-using WLDataLayer.DAL.Interfaces;
-using WLDataLayer.DAL.Repositories;
+using LoopvieDataLayer.DAL.DBContext;
+using LoopvieDataLayer.DAL.Interfaces;
+using LoopvieDataLayer.DAL.Repositories;
 
-namespace WLDataLayer.DAL
+namespace LoopvieDataLayer.DAL
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private WLDBContext _dbContext;
+        private LoopvieDBContext _dbContext;
         private NpgsqlTransaction _transaction;
 
-        public UnitOfWork(WLDBContext dbContext)
+        public UnitOfWork(LoopvieDBContext dbContext)
         {
             _dbContext = dbContext;
         }

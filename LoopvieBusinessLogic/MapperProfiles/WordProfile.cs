@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using WLCommon.Models.Request;
-using WLDataLayer.DAL.StoreEntities;
+using LoopvieCommon.Models.Request;
+using LoopvieDataLayer.DAL.StoreEntities;
 
-namespace WLBusinessLogic.MapperProfiles
+namespace LoopvieBusinessLogic.MapperProfiles
 {
     public class WordProfile : Profile
     {

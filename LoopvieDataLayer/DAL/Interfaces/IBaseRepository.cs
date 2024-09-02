@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace WLDataLayer.DAL.Interfaces
+namespace LoopvieDataLayer.DAL.Interfaces
 {
     public interface IBaseRepository<T> where T : class
     {

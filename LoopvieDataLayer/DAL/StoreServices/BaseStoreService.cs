@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using System.Linq.Expressions;
-using WLDataLayer.DAL.StoreServices.Interfaces;
-using WLDataLayer.DAL.StoreServices.StoresSettings;
+using LoopvieDataLayer.DAL.StoreServices.Interfaces;
+using LoopvieDataLayer.DAL.StoreServices.StoresSettings;
 
-namespace WLDataLayer.DAL.StoreServices
+namespace LoopvieDataLayer.DAL.StoreServices
 {
     public class BaseStoreService<T, TSettings> : IBaseStoreService<T> where T : class  where TSettings : class, IStoreServiceSettings
     {

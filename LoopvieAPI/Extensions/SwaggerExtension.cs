@@ -1,6 +1,6 @@
 ﻿using Microsoft.OpenApi.Models;
 
-namespace WLAPI.Extensions
+namespace LoopvieAPI.Extensions
 {
     public static class SwaggerExtension
     {

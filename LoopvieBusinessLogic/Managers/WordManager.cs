@@ -1,15 +1,15 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
-using WLBusinessLogic.Interfaces;
-using WLCommon.Helpers;
-using WLCommon.Models.Request;
-using WLCommon.Models.Response;
-using WLDataLayer.DAL.Interfaces;
-using WLDataLayer.DAL.StoreEntities;
-using WLDataLayer.DAL.StoreServices;
-using WLDataLayer.Identity;
+using LoopvieBusinessLogic.Interfaces;
+using LoopvieCommon.Helpers;
+using LoopvieCommon.Models.Request;
+using LoopvieCommon.Models.Response;
+using LoopvieDataLayer.DAL.Interfaces;
+using LoopvieDataLayer.DAL.StoreEntities;
+using LoopvieDataLayer.DAL.StoreServices;
+using LoopvieDataLayer.Identity;
 
-namespace WLBusinessLogic.Managers
+namespace LoopvieBusinessLogic.Managers
 {
     public class WordManager : BaseManager, IWordManager
     {

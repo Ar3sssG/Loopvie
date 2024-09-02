@@ -1,5 +1,5 @@
 ﻿
-namespace WLCommon.Models.Request
+namespace LoopvieCommon.Models.Request
 {
     public class RefreshTokenRequestModel
     {

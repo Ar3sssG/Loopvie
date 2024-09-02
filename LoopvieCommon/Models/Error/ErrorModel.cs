@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WLCommon.Models.Error
+namespace LoopvieCommon.Models.Error
 {
     public class ErrorModel
     {

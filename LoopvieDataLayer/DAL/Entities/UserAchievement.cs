@@ -1,6 +1,6 @@
-﻿using WLDataLayer.Identity;
+﻿using LoopvieDataLayer.Identity;
 
-namespace WLDataLayer.DAL.Entities
+namespace LoopvieDataLayer.DAL.Entities
 {
     public class UserAchievement : BaseEntity
     {

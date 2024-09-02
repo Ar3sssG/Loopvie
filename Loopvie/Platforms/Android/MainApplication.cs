@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace WordLoop
+namespace Loopvie
 {
     [Application]
     public class MainApplication : MauiApplication

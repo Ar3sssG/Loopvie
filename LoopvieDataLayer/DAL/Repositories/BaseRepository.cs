@@ -1,15 +1,15 @@
-﻿using WLDataLayer.DAL.Interfaces;
+﻿using LoopvieDataLayer.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using WLDataLayer.DAL.DBContext;
+using LoopvieDataLayer.DAL.DBContext;
 
-namespace WLDataLayer.DAL
+namespace LoopvieDataLayer.DAL
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
-        protected WLDBContext _dbContext;
-        public BaseRepository(WLDBContext dbContext)
+        protected LoopvieDBContext _dbContext;
+        public BaseRepository(LoopvieDBContext dbContext)
         {
             _dbContext = dbContext;
         }

@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace WordLoop
+namespace Loopvie
 {
     public class Program
     {

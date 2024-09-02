@@ -1,9 +1,9 @@
-﻿using WLCommon.Models.Manager;
-using WLCommon.Models.Request;
-using WLCommon.Models.Response;
-using WLDataLayer.Identity;
+﻿using LoopvieCommon.Models.Manager;
+using LoopvieCommon.Models.Request;
+using LoopvieCommon.Models.Response;
+using LoopvieDataLayer.Identity;
 
-namespace WLBusinessLogic.Interfaces
+namespace LoopvieBusinessLogic.Interfaces
 {
     public interface IIdentityManager
     {

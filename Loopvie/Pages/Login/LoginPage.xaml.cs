@@ -1,4 +1,4 @@
-namespace WordLoop.Pages.Login;
+namespace Loopvie.Pages.Login;
 
 public partial class LoginPage : ContentPage
 {

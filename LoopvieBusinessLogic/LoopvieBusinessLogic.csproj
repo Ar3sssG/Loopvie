@@ -12,8 +12,8 @@
 		<PackageReference Include="X.PagedList" Version="8.4.7" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\WLCommon\LoopvieCommon.csproj" />
-		<ProjectReference Include="..\WLDataLayer\LoopvieDataLayer.csproj" />
+		<ProjectReference Include="..\LoopvieCommon\LoopvieCommon.csproj" />
+		<ProjectReference Include="..\LoopvieDataLayer\LoopvieDataLayer.csproj" />
 	</ItemGroup>
 
 </Project>
