@@ -8,16 +8,16 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
 # Copy all project files and restore dependencies
-COPY WLAPI/WLAPI.csproj WLAPI/
-COPY WLBusinessLogic/WLBusinessLogic.csproj WLBusinessLogic/
-COPY WLDataLayer/WLDataLayer.csproj WLDataLayer/
-RUN dotnet restore WLAPI/WLAPI.csproj
+COPY LoopvieAPI/LoopvieAPI.csproj LoopvieAPI/
+COPY LoopvieBusinessLogic/LoopvieBusinessLogic.csproj LoopvieBusinessLogic/
+COPY LoopvieDataLayer/LoopvieDataLayer.csproj LoopvieDataLayer/
+RUN dotnet restore LoopvieAPI/LoopvieAPI.csproj
 
 # Copy the rest of the source code
 COPY . .
 
 # Build the application
-WORKDIR /src/WLAPI
+WORKDIR /src/LoopvieAPI
 RUN dotnet build -c Release -o /app/build
 
 # Publish the application
@@ -28,4 +28,4 @@ RUN dotnet publish -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "WLAPI.dll"]
+ENTRYPOINT ["dotnet", "LoopvieAPI.dll"]
